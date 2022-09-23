@@ -146,20 +146,20 @@ class TwitterPosts extends HTMLElement {
     // Edit posts here
     posts = [
         {
-            content: "To take a trivial example, which of us ever undertakes laborious physical exercise, some advantage from it? ",
+            content: "Let's go #TeamEndeavor",
+            timestamp: "Just Now",
+        },
+        {
+            content: "Wanna read relaxing news? Go Endeavor #TeamEndeavor #RelaxGang",
             timestamp: "14 minutes ago",
         },
         {
-            content: "To take a trivial example, which of us ever undertakes laborious physical exercise, some advantage from it? ",
-            timestamp: "14 minutes ago",
+            content: "Learn more about local sports #TeamEndeavor #Esports #F1",
+            timestamp: "30 minutes ago",
         },
         {
-            content: "To take a trivial example, which of us ever undertakes laborious physical exercise, some advantage from it? ",
-            timestamp: "14 minutes ago",
-        },
-        {
-            content: "To take a trivial example, which of us ever undertakes laborious physical exercise, some advantage from it? ",
-            timestamp: "15 minutes ago",
+            content: "Kpop is in the area #TeamEndeavor #Blackpink",
+            timestamp: "2 Days ago",
         },
 
 
@@ -278,22 +278,22 @@ class TrendingPosts extends HTMLElement {
     // Edit here
     posts = [
         {
-            image: "assets/images/t-post1.png",
-            title: "The latest trendsin Travel",
-            href: "#",
-            timestamp: "08 Jan 2019",
+            image: "assets/images/F1s.png",
+            title: "Sepang F1 Circuit Hiatus",
+            href: "article7.html",
+            timestamp: "21 Sept 2022",
         },
         {
-            image: "assets/images/t-post2.png",
-            title: "Effective fine art design",
-            href: "#",
-            timestamp: "08 Jan 2019",
+            image: "assets/images/kpops.png",
+            title: "Growing Kpop Culture",
+            href: "article5.html",
+            timestamp: "21 Sept 2022",
         },
         {
-            image: "assets/images/t-post3.png",
-            title: "How to design your first PSD?",
-            href: "#",
-            timestamp: "08 Jan 2019",
+            image: "assets/images/books.png",
+            title: "Reading Experience",
+            href: "article1.html",
+            timestamp: "21 Sept 2022",
         },
 
     ]
@@ -347,24 +347,28 @@ class RelatedAritcle extends HTMLElement {
                 <img src="${src}" alt="">
 
             </div>
-            <div>
+            <div style="height: 90px";>
                 <p class="img-tag text-center">${tag}</p>
                 <hr class="mt-0" />
                 <h3 class="text-center">${title}</h3>
             </div>
+
         </div>
 
-        <div>
-            <ul class="nav nav-fill mx-auto pb-3">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">By ${author}</a>
-                </li>
-                <li><span>.</span></li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">${timestamp}</a>
-                </li>
-            </ul>
-            <p class="second-clr text-center">${desc}</p>
+        <div style="display: flex; flex-grow: 1; flex-direction: column; justify-content: space-between;">
+            <div>
+                <ul class="nav nav-fill mx-auto pb-3" style="height: 50px;">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">By ${author}</a>
+                    </li>
+                    <li><span>.</span></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">${timestamp}</a>
+                    </li>
+                </ul>
+                <p class="second-clr text-center">${desc}</p>
+            </div>
+
 
             <a href="${href}" class="btn text-uppercase text-center mx-auto">Read More</a>
         </div>
