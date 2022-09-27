@@ -99,3 +99,120 @@ jQuery("#toggle-search").click(function () {
     }
 });
 
+const query = [
+    {
+      title: "The state of reading will evolve with your life's experience.",
+      tag: "Literature",
+      href: "article1.html",
+    },
+    {
+      title: "The situation of Malaysian people reading books.",
+      tag: "Literature",
+      href: "article2.html",
+    },
+    {
+      title: "How to improve reading habits?",
+      tag: "Literature",
+      href: "article3.html",
+    },
+    {
+      title: "Travel: Has the pandemic affected tourism levels in Malaysia? Let's take a look.",
+      tag: "Travel",
+      href: "article4.html",
+    },
+    {
+      title: "Has Malaysian culture really been influenced by KPOP? Let's find out.",
+      tag: "Entertainment",
+      href: "article5.html",
+    },
+    {
+      title: "The Benefits of Travel",
+      tag: "Travel",
+      href: "article6.html",
+    },
+    {
+      title: "Youth Perspective on Esports as a Career and Future.",
+      tag: "Sports",
+      href: "article7.html",  
+    },
+    {
+      title: "Reasons behind Sepang F1 hiatus and plans to bring it back",
+      tag: "Sports",
+      href: "article8.html",  
+    },
+    {
+      title: "How Are Youths Rectifying The Pollution Problems",
+      tag: "Environment",
+      href: "article9.html",  
+    },  
+    {
+      title: "Film Review - Sowon",
+      tag: "Entertainment",
+      href: "article10.html",  
+    },  
+  ]
+
+function getResult(searchVal) {
+  return query.filter(item => 
+    item.title.toLowerCase().includes(searchVal.toLowerCase()) || item.tag.toLowerCase().includes(searchVal.toLowerCase())
+    )
+}
+
+function populateSearchResult(result) {
+  const searchResultEl = document.getElementById("search-result")
+
+  searchResultEl.innerHTML = ``;
+
+  let innerHtml = ``;
+
+  if (result.length == 0) {
+    innerHtml += "<div style='padding-top: 20px'>No Result</div>"
+  }
+  
+  for (const item of result) {
+    
+    const inner = `
+      <div class="search-item" onclick="window.location.href = '${item.href}'">
+        <p>${item.tag.toUpperCase()}</p>
+        <a>${item.title}</a>
+      </div>\n
+    `
+
+    innerHtml += inner;
+  }
+
+  searchResultEl.innerHTML = innerHtml;
+}
+
+function clearSearch() {
+  const searchResultEl = document.getElementById("search-result")
+  const searchInputEl = document.getElementById("search-input")
+
+  searchInputEl.value = "";
+  searchResultEl.innerHTML = `<div style='padding-top: 20px'>Start Searching</div>`
+}
+
+function searchNow() {
+  const searchInputEl = document.getElementById("search-input")
+  const searchResultEl = document.getElementById("search-result")
+  
+  
+  searchInputEl.addEventListener("keydown", () => {
+    const res = getResult(searchInputEl.value)
+
+    if (searchInputEl.value == "") {
+      clearSearch()
+
+      return
+    }
+
+    populateSearchResult(res)
+  })
+}
+
+function toggleSearch() {
+  console.log("search")
+  const searchContainerEl = document.getElementById("search-container")
+  searchContainerEl.classList.toggle("show")
+  searchContainerEl.classList.toggle("hide")
+}

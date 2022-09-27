@@ -56,7 +56,7 @@ class Header extends HTMLElement {
                                 <li class="nav-item">
                                     <a class="nav-link" href="article4.html">TRAVEL</a>
                                 </li>
-                                <li class="nav-item">
+                                <li class="nav-item" onclick="toggleSearch()">
                                     <form action="" method="POST">
                                         <div class="input-group mt-0 mx-auto" style="width:16px;">
 
@@ -70,17 +70,23 @@ class Header extends HTMLElement {
                             </ul>
                         </div>
                     </nav>
+                </div>  
+                <div class="search-container hide" id="search-container">
+                    <input id="search-input" type="text" onkeydown="searchNow()"/>
+                    <div id="search-arrow"></div>
+                    <div id="search-result">
+                        <div style='padding-top: 20px'>Start Searching</div>
+                    </div>
                 </div>
-
             </div>
             <nav class="hamburger-nav" id="hamburger">
                 <ul>
-                    <li><a href="/">News</a></li>
-                    <li><a href="/">History</a></li>
-                    <li><a href="/">Culture</a></li>
-                    <li><a href="/">Tech</a></li>
-                    <li><a href="/">Life</a></li>
-                    <li><a href="/">Opinion</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="article7.html">Sports</a></li>
+                    <li><a href="article1.html/">Literature</a></li>
+                    <li><a href="article9.html">Environment</a></li>
+                    <li><a href="article5.html">Entertainment</a></li>
+                    <li><a href="article4.html">Travel</a></li>
                 </ul>
             </nav>
         </div>
